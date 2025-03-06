@@ -83,4 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Toggle dropdown menu for mobile devices
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownToggle.addEventListener('click', function() {
+        dropdownToggle.classList.toggle('active');
+        dropdownMenu.classList.toggle('active');
+    });
 });
