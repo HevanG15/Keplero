@@ -69,14 +69,14 @@
                     </div>
                 </div>
                 <div class="formula-box">
-                    <h3>Equazione dell'ellisse in coordinate polari:</h3>
-                    <p class="formula">$$r = \frac{a(1-e^2)}{1+e\cos\theta}$$</p>
+                    <h3>Equazione dell'ellisse in forma parametrica:</h3>
+                    <p class="formula">$$\begin{cases} x = a\cos t \\ y = b\sin t \end{cases}$$</p>
                     <p>Dove:</p>
                     <ul>
-                        <li>r = distanza dal fuoco</li>
                         <li>a = semiasse maggiore</li>
+                        <li>b = semiasse minore (dove $b = a\sqrt{1-e^2}$)</li>
                         <li>e = eccentricità</li>
-                        <li>θ = angolo polare</li>
+                        <li>t = parametro angolare</li>
                     </ul>
                 </div>
             </div>
@@ -97,15 +97,16 @@
                     </div>
                 </div>
                 <div class="formula-box">
-                    <h3>Formula matematica:</h3>
-                    <p class="formula">$$\frac{dA}{dt} = \frac{L}{2m} = \text{costante}$$</p>
+                    <h3>Relazione tra velocità e distanza:</h3>
+                    <p class="formula">$$v_A \cdot D_A = v_P \cdot D_P$$</p>
                     <p>Dove:</p>
                     <ul>
-                        <li>A = area spazzata</li>
-                        <li>t = tempo</li>
-                        <li>L = momento angolare</li>
-                        <li>m = massa del pianeta</li>
+                        <li>v<sub>A</sub> = velocità all'afelio</li>
+                        <li>v<sub>P</sub> = velocità al perielio</li>
+                        <li>D<sub>A</sub> = a(1+e) = distanza dal Sole all'afelio</li>
+                        <li>D<sub>P</sub> = a(1−e) = distanza dal Sole al perielio</li>
                     </ul>
+                    <p class="note">Questa formula è una conseguenza diretta della conservazione del momento angolare e mostra come la velocità di un pianeta sia inversamente proporzionale alla sua distanza dal Sole.</p>
                 </div>
             </div>
         </section>
@@ -131,9 +132,6 @@
                     <ul>
                         <li>T = periodo orbitale</li>
                         <li>a = semiasse maggiore dell'orbita</li>
-                        <li>G = costante gravitazionale</li>
-                        <li>M = massa del Sole</li>
-                        <li>m = massa del pianeta (generalmente trascurabile rispetto a M)</li>
                     </ul>
                 </div>
             </div>
