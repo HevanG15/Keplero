@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Leggi di Keplero - La loro attuale valenza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="custom-icons.css">
+</head>
+<body>
+    <!-- Theme Switch -->
+    <div class="theme-switch-wrapper">
+        <span class="theme-icon"><i class="fas fa-sun"></i></span>
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider"></div>
+        </label>
+        <span class="theme-icon"><i class="fas fa-moon"></i></span>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>Le Leggi di Keplero</h1>
+            <p class="subtitle">La loro scoperta e la loro attuale valenza</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduzione">Introduzione</a></li>
+            <li><a href="#prima-legge">Prima Legge</a></li>
+            <li><a href="#seconda-legge">Seconda Legge</a></li>
+            <li><a href="#terza-legge">Terza Legge</a></li>
+            <li><a href="#applicazioni">Applicazioni Moderne</a></li>
+            <li><a href="#galleria">Galleria</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduzione" class="section">
+            <div class="container">
+                <h2>Introduzione a Johannes Kepler</h2>
+                <div class="content-with-image">
+                    <div class="text-content">
+                        <p>Johannes Kepler (1571-1630) è stato un astronomo, matematico e astrologo tedesco, figura chiave della rivoluzione scientifica del XVII secolo. Basandosi sui dati osservativi raccolti da Tycho Brahe, Kepler formulò tre leggi fondamentali che descrivono il movimento dei pianeti intorno al Sole.</p>
+                        <p>Le sue scoperte rappresentarono una svolta decisiva nell'astronomia, abbandonando il modello geocentrico a favore di quello eliocentrico e fornendo le basi matematiche che Isaac Newton avrebbe successivamente utilizzato per sviluppare la sua teoria della gravitazione universale.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/kepler-portrait.jpg" alt="Ritratto di Johannes Kepler">
+                        <p class="caption">Johannes Kepler (1571-1630)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prima-legge" class="section">
+            <div class="container">
+                <h2>Prima Legge di Kepler: Legge delle Orbite Ellittiche</h2>
+                <div class="content-with-image">
+                    <div class="text-content">
+                        <p><strong>"L'orbita di ogni pianeta è un'ellisse, con il Sole situato in uno dei due fuochi."</strong></p>
+                        <p>Questa legge rappresentò una rottura rivoluzionaria con la tradizione astronomica precedente, che considerava le orbite planetarie come circolari perfette. Kepler scoprì che le orbite sono in realtà ellittiche, con il Sole posizionato in uno dei due fuochi dell'ellisse, non al centro.</p>
+                        <p>L'eccentricità dell'ellisse varia da pianeta a pianeta: alcune orbite sono quasi circolari (come quella della Terra), mentre altre sono più allungate (come quella di Marte o di Plutone).</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/first-law.jpg" alt="Prima Legge di Kepler - Orbite Ellittiche">
+                        <p class="caption">Rappresentazione dell'orbita ellittica con il Sole in uno dei fuochi</p>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <h3>Equazione dell'ellisse in coordinate polari:</h3>
+                    <p class="formula">$$r = \frac{a(1-e^2)}{1+e\cos\theta}$$</p>
+                    <p>Dove:</p>
+                    <ul>
+                        <li>r = distanza dal fuoco</li>
+                        <li>a = semiasse maggiore</li>
+                        <li>e = eccentricità</li>
+                        <li>θ = angolo polare</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="seconda-legge" class="section">
+            <div class="container">
+                <h2>Seconda Legge di Kepler: Legge delle Aree Uguali</h2>
+                <div class="content-with-image">
+                    <div class="text-content">
+                        <p><strong>"La linea che congiunge un pianeta al Sole spazza aree uguali in tempi uguali."</strong></p>
+                        <p>Questa legge descrive la velocità con cui un pianeta si muove lungo la sua orbita. Quando un pianeta è più vicino al Sole (perielio), si muove più velocemente; quando è più lontano (afelio), si muove più lentamente.</p>
+                        <p>In termini matematici, la legge afferma che la velocità areolare (l'area spazzata dalla linea Sole-pianeta nell'unità di tempo) è costante. Questa legge è una conseguenza della conservazione del momento angolare.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/second-law.jpg" alt="Seconda Legge di Kepler - Aree Uguali">
+                        <p class="caption">Aree uguali sono spazzate in tempi uguali</p>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <h3>Formula matematica:</h3>
+                    <p class="formula">$$\frac{dA}{dt} = \frac{L}{2m} = \text{costante}$$</p>
+                    <p>Dove:</p>
+                    <ul>
+                        <li>A = area spazzata</li>
+                        <li>t = tempo</li>
+                        <li>L = momento angolare</li>
+                        <li>m = massa del pianeta</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="terza-legge" class="section">
+            <div class="container">
+                <h2>Terza Legge di Kepler: Legge Armonica</h2>
+                <div class="content-with-image">
+                    <div class="text-content">
+                        <p><strong>"Il quadrato del periodo orbitale di un pianeta è proporzionale al cubo del semiasse maggiore della sua orbita."</strong></p>
+                        <p>Questa legge stabilisce una relazione matematica precisa tra il tempo che un pianeta impiega per completare un'orbita (periodo orbitale) e la sua distanza media dal Sole (semiasse maggiore dell'ellisse).</p>
+                        <p>Kepler scoprì questa relazione confrontando i dati di diversi pianeti, notando che i pianeti più lontani dal Sole impiegano più tempo per completare le loro orbite secondo una proporzione specifica.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/third-law.jpg" alt="Terza Legge di Kepler - Legge Armonica">
+                        <p class="caption">Relazione tra periodo orbitale e distanza dal Sole</p>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <h3>Formula matematica:</h3>
+                    <p class="formula">$$\frac{T^2}{a^3} = \text{costante}$$</p>
+                    <p>Dove:</p>
+                    <ul>
+                        <li>T = periodo orbitale</li>
+                        <li>a = semiasse maggiore dell'orbita</li>
+                        <li>G = costante gravitazionale</li>
+                        <li>M = massa del Sole</li>
+                        <li>m = massa del pianeta (generalmente trascurabile rispetto a M)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="applicazioni" class="section">
+            <div class="container">
+                <h2>Applicazioni Moderne delle Leggi di Kepler</h2>
+                <div class="applications-grid">
+                    <div class="application-card">
+                        <div class="card-icon"><i class="fas fa-satellite"></i></div>
+                        <h3>Meccanica Orbitale</h3>
+                        <p>Le leggi di Kepler sono fondamentali per il calcolo delle orbite dei satelliti artificiali e per le missioni spaziali. Ingegneri e scienziati utilizzano queste leggi per determinare le traiettorie ottimali e il consumo di carburante.</p>
+                    </div>
+                    <div class="application-card">
+                        <div class="card-icon"><i class="fas fa-globe-europe"></i></div>
+                        <h3>Scoperta di Esopianeti</h3>
+                        <p>Gli astronomi utilizzano le deviazioni dalle leggi di Kepler per rilevare pianeti extrasolari. Osservando le "oscillazioni" di una stella, possono dedurre la presenza e le caratteristiche dei pianeti che le orbitano attorno.</p>
+                    </div>
+                    <div class="application-card">
+                        <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Missioni Interplanetarie</h3>
+                        <p>Per le missioni verso altri pianeti, le leggi di Kepler aiutano a calcolare le "finestre di lancio" ottimali e le manovre di assistenza gravitazionale, risparmiando tempo e carburante.</p>
+                    </div>
+                    <div class="application-card">
+                        <div class="card-icon"><i class="fas fa-meteor"></i></div>
+                        <h3>Studio degli Asteroidi</h3>
+                        <p>Le leggi di Kepler sono utilizzate per tracciare le orbite degli asteroidi e valutare il rischio di impatto con la Terra, contribuendo ai sistemi di allerta precoce.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galleria" class="section">
+            <div class="container">
+                <h2>Galleria Immagini</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/solar-system.jpg" alt="Sistema Solare">
+                        <p class="caption">Il Sistema Solare con le orbite ellittiche dei pianeti</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/kepler-manuscript.jpg" alt="Manoscritto di Kepler">
+                        <p class="caption">Pagina originale dal manoscritto di Kepler</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/kepler-telescope.jpg" alt="Telescopio Kepler">
+                        <p class="caption">Il telescopio spaziale Kepler, lanciato dalla NASA nel 2009</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/exoplanets.jpg" alt="Esopianeti">
+                        <p class="caption">Rappresentazione artistica di un sistema di esopianeti</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Esopianeti Scoperti</h3>
+                    <ul class="exoplanet-list">
+                        <li><i class="fas fa-planet-ringed"></i> Kepler-452b</li>
+                        <li><i class="fas fa-planet"></i> TRAPPIST-1e</li>
+                        <li><i class="fas fa-globe-europe"></i> Proxima Centauri b</li>
+                        <li><i class="fas fa-meteor"></i> HD 209458 b</li>
+                    </ul>
+                </div>
+                <p>&copy; 2025 Le Leggi di Keplero | Sito creato a scopo educativo</p>
+                <p>Immagini: NASA, ESA, e altre fonti pubbliche</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            startup: {
+                ready: function() {
+                    MathJax.startup.defaultReady();
+                    
+                    // Function to update MathJax for dark mode
+                    function updateMathJaxForTheme() {
+                        const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+                        const mathElements = document.querySelectorAll('.formula');
+                        
+                        mathElements.forEach(function(element) {
+                            if (isDarkMode) {
+                                element.classList.add('dark-formula');
+                            } else {
+                                element.classList.remove('dark-formula');
+                            }
+                        });
+                        
+                        // Force MathJax to rerender
+                        MathJax.typeset();
+                    }
+                    
+                    // Initial update
+                    updateMathJaxForTheme();
+                    
+                    // Listen for theme changes
+                    const toggleSwitch = document.querySelector('#checkbox');
+                    if (toggleSwitch) {
+                        toggleSwitch.addEventListener('change', updateMathJaxForTheme);
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

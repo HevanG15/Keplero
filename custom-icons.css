@@ -1,0 +1,15 @@
+/* Custom Exoplanet Icons */
+.fa-planet:before {
+    content: "\f7a2"; /* Using Saturn icon as base */
+    display: inline-block;
+}
+
+.fa-planet-ringed:before {
+    content: "\f7a2"; /* Using Saturn icon */
+    display: inline-block;
+}
+
+/* Add a slight rotation to differentiate planets */
+.fa-planet-ringed {
+    transform: rotate(15deg);
+}
