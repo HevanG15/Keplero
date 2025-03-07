@@ -27,17 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleSwitch.addEventListener('change', switchTheme, false);
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
+    document.querySelectorAll('nav a, a.phet-button, .scroll-to-top').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - 60,
-                behavior: 'smooth'
-            });
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
@@ -54,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -65,13 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add active class to current navigation item
     window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        
+        // Handle active navigation
         let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (pageYOffset >= sectionTop - 100) {
+            if (scrollPosition >= sectionTop - 100) {
                 current = section.getAttribute('id');
             }
         });
@@ -82,14 +89,80 @@ document.addEventListener('DOMContentLoaded', function() {
                 link.classList.add('active');
             }
         });
+        
+        // Handle scroll to top button visibility
+        const scrollToTopButton = document.querySelector('.scroll-to-top');
+        if (scrollToTopButton) {
+            if (scrollPosition > 500) {
+                scrollToTopButton.classList.add('visible');
+            } else {
+                scrollToTopButton.classList.remove('visible');
+            }
+        }
     });
 
     // Toggle dropdown menu for mobile devices
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
 
-    dropdownToggle.addEventListener('click', function() {
-        dropdownToggle.classList.toggle('active');
-        dropdownMenu.classList.toggle('active');
+    if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', function() {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+    }
+    
+    // Add scroll-to-top button if it doesn't exist
+    if (!document.querySelector('.scroll-to-top')) {
+        const scrollToTopButton = document.createElement('div');
+        scrollToTopButton.className = 'scroll-to-top';
+        scrollToTopButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        scrollToTopButton.setAttribute('title', 'Torna su');
+        document.body.appendChild(scrollToTopButton);
+        
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.application-card, .gallery-item, .formula-box');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+            this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
     });
+    
+    // Initialize lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        // Fallback for browsers that don't support lazy loading
+        const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
+        });
+        
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        lazyImages.forEach(image => {
+            lazyImageObserver.observe(image);
+        });
+    }
 });
