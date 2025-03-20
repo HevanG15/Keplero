@@ -23,6 +23,7 @@
     <header>
         <div class="header-content">
             <h1>Le Leggi di Keplero</h1>
+            <p class="subtitle"></p>
             <p class="subtitle">Hevan, Giorgio, Ida, Giuseppe e Martina</p>
             <p class="subtitle">3I Fisica 2025</p>
         </div>
@@ -36,7 +37,7 @@
             <li><a href="#seconda-legge">Seconda Legge</a></li>
             <li><a href="#terza-legge">Terza Legge</a></li>
             <li><a href="#applicazioni">Applicazioni Moderne</a></li>
-            <li><a href="#galleria">Galleria</a></li>
+            <li><a href="#galleria">Galleria Immagini</a></li>
         </ul>
     </nav>
 
@@ -46,7 +47,7 @@
                 <h2>Introduzione a Giovanni Keplero</h2>
                 <div class="content-with-image">
                     <div class="text-content">
-                        <p>Giovanni Keplero (1571-1630) è stato un astronomo, matematico e astrologo tedesco, figura chiave della rivoluzione scientifica del XVII secolo. Basandosi sui dati osservativi raccolti da Tycho Brahe, Keplero formulò tre leggi fondamentali che descrivono il movimento dei pianeti intorno al Sole.</p>
+                        <p>Giovanni Keplero (1571-1630) è stato un astronomo, matematico e astrologo tedesco, figura chiave della rivoluzione scientifica del XVII secolo. Basandosi sui dati osservativi raccolti dall'astronomo danese Tycho Brahe, Keplero formulò tre leggi fondamentali che descrivono il movimento dei pianeti intorno al Sole.</p>
                         <p>Le sue scoperte rappresentarono una svolta decisiva nell'astronomia, abbandonando il modello geocentrico a favore di quello eliocentrico e fornendo le basi matematiche che Isaac Newton avrebbe successivamente utilizzato per sviluppare la sua teoria della gravitazione universale.</p>
                     </div>
                     <div class="image-container">
@@ -78,6 +79,7 @@
                     <ul>
                         <li>a = semiasse maggiore</li>
                         <li>b = semiasse minore (dove $b = a\sqrt{1-e^2}$)</li>
+                        <li>c = distanza focale</li>
                         <li>e = eccentricità</li>
                     </ul>
                 </div>
@@ -105,8 +107,8 @@
                     <ul>
                         <li>v<sub>A</sub> = velocità all'afelio</li>
                         <li>v<sub>P</sub> = velocità al perielio</li>
-                        <li>D<sub>A</sub> = a(1+e) = distanza dal Sole all'afelio</li>
-                        <li>D<sub>P</sub> = a(1-e) = distanza dal Sole al perielio</li>
+                        <li>D<sub>A</sub> = a + c = distanza dal Sole all'afelio</li>
+                        <li>D<sub>P</sub> = a - c = distanza dal Sole al perielio</li>
                     </ul>
                     <p class="note">Questa formula è una conseguenza diretta della conservazione del momento angolare e mostra come la velocità di un pianeta sia inversamente proporzionale alla sua distanza dal Sole.</p>
                 </div>
@@ -115,7 +117,7 @@
 
         <section id="terza-legge" class="section">
             <div class="container">
-                <h2>Terza Legge di Keplero: Legge Armonica</h2>
+                <h2>Terza Legge di Keplero: Legge del periodo di rivoluzione</h2>
                 <div class="content-with-image">
                     <div class="text-content">
                         <p><strong>"Il quadrato del periodo orbitale di un pianeta è proporzionale al cubo del semiasse maggiore della sua orbita."</strong></p>
