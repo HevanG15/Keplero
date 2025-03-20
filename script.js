@@ -165,4 +165,85 @@ document.addEventListener('DOMContentLoaded', function() {
             lazyImageObserver.observe(image);
         });
     }
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const prevButton = lightbox.querySelector('.prev-button');
+    const nextButton = lightbox.querySelector('.next-button');
+    
+    // Get all gallery images
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    let currentImageIndex = 0;
+    
+    // Function to open lightbox
+    function openLightbox(index) {
+        const image = galleryImages[index];
+        const caption = image.closest('.gallery-item').querySelector('.caption');
+        
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        
+        if (caption) {
+            lightboxCaption.textContent = caption.textContent;
+        } else {
+            lightboxCaption.textContent = '';
+        }
+        
+        currentImageIndex = index;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+    }
+    
+    // Function to close lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Function to navigate to previous image
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        openLightbox(currentImageIndex);
+    }
+    
+    // Function to navigate to next image
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        openLightbox(currentImageIndex);
+    }
+    
+    // Add click event to each gallery image
+    galleryImages.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            openLightbox(index);
+        });
+    });
+    
+    // Add event listeners for lightbox controls
+    lightboxClose.addEventListener('click', closeLightbox);
+    prevButton.addEventListener('click', showPrevImage);
+    nextButton.addEventListener('click', showNextImage);
+    
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    });
 });
